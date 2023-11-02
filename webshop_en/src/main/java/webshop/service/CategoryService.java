@@ -20,15 +20,15 @@ public class CategoryService {
 	private final ProductRepository productRepository;
 	
 
-	@Transactional
+//	@Transactional
 	public void discountProductsInCategory(String name, int percent) {
 		
 		List<Category> categories = categoryRepository.findByName(name);
 		
-		categories.forEach(c ->{
+		categories.forEach(c -> {
 			c.getProducts().forEach( p -> {
 				discountProduct(p, percent);
-				//productRepository.save(p); save not needed, because of Transactional
+				productRepository.save(p); //save not needed, because of Transactional
 			});
 		});
 	}
