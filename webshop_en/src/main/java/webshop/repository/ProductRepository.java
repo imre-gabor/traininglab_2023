@@ -1,11 +1,9 @@
 package webshop.repository;
 
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import webshop.model.Category;
 import webshop.model.Product;
 
-public interface ProductRepository {
+public interface ProductRepository extends JpaRepository<Product, Integer> {
 
-	public Product save(Product product);
 }
