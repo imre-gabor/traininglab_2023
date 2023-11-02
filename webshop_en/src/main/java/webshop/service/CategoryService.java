@@ -20,7 +20,7 @@ public class CategoryService {
 	private final ProductRepository productRepository;
 	
 
-//	@Transactional
+	@Transactional
 	public void discountProductsInCategory(String name, int percent) {
 		
 		List<Category> categories = categoryRepository.findByName(name);
